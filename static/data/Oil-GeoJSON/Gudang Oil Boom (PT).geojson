@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "Gudang Oil Boom (PT)",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "id": 1, "Bangunan": "Gudang Oil Boom" }, "geometry": { "type": "Point", "coordinates": [ 105.86335633053578, -5.255084139561494 ] } }
+]
+}

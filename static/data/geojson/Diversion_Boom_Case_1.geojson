@@ -1,0 +1,9 @@
+{
+"type": "FeatureCollection",
+"name": "Diversion_Boom_Case_1",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "id": null, "Name": "Diversion Boom" }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 105.865332550644965, -5.254247174649283 ], [ 105.866185032637162, -5.253355162484372 ] ] ] } },
+{ "type": "Feature", "properties": { "id": null, "Name": "Diversion Boom" }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 105.867920515356687, -5.255773411788935 ], [ 105.868723494518605, -5.254854365311376 ] ] ] } }
+]
+}

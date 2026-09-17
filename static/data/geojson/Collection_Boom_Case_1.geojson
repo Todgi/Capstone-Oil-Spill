@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "Collection_Boom_Case_1",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "id": null, "Name": "Collection Boom" }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 105.865331949882389, -5.254246934344284 ], [ 105.865508814363352, -5.254353149154869 ], [ 105.865984137655985, -5.254711684216842 ], [ 105.866044213906306, -5.254718893366882 ], [ 105.866135529806812, -5.254771760467173 ], [ 105.866574326739212, -5.254722738246902 ], [ 105.867926883439125, -5.255765661952644 ] ] ] } }
+]
+}

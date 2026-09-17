@@ -1,0 +1,2 @@
+CMEMS_USERNAME=your_username
+CMEMS_PASSWORD=your_password 

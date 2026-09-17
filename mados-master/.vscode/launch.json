@@ -1,0 +1,18 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "name": "Python Debugger: Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+
+            "args": ["--path", "D:/Documents/Capstone/Deep-Learning/Optik/mados-master/data/MADOS", "--model_path", "D:/Documents/Capstone/Deep-Learning/Optik/mados-master/marinext/trained_models/1", "--predict_masks", "True", "--gen_masks_path", "D:/Documents/Capstone/Deep-Learning/Optik/dataset_optik/marinext_predicted/predict-1"]
+        }
+    ]
+}

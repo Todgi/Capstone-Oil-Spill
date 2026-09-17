@@ -1,0 +1,16 @@
+<div class="upload-section">
+    <h3>SAR Image Processing</h3>
+    <div class="input-group">
+        <label>Processing Method:</label>
+        <select id="processingMethod">
+            <option value="unet">U-Net Segmentation</option>
+            <option value="mados">MADOS Detection</option>
+            <option value="both">Both Methods</option>
+        </select>
+    </div>
+    <div class="input-group">
+        <label>GeoTIFF Input:</label>
+        <input type="file" id="rasterInput" accept=".tif,.tiff">
+    </div>
+    <button onclick="processWithSelectedMethod()" class="btn btn-primary">Process Image</button>
+</div> 

@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OIL SPILL NEAR-REAL TIME DETECTION WEBGIS</title>
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/static/css/style.css" />
+    
+    <style>
+        /* Add styles for separated sections */
+        .processing-section {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .section-header h3 {
+            margin: 0;
+            margin-right: 15px;
+        }
+        
+        .section-badge {
+            background: #007bff;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .sar-section .section-badge {
+            background: #28a745;
+        }
+        
+        .optic-section .section-badge {
+            background: #fd7e14;
+        }
+        
+        .info-box {
+            background: #e7f3ff;
+            border-left: 4px solid #007bff;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+        
+        .sar-section .info-box {
+            background: #d4edda;
+            border-left-color: #28a745;
+        }
+        
+        .optic-section .info-box {
+            background: #fff3cd;
+            border-left-color: #fd7e14;
+        }
+        
+        /* Styling untuk split view */
+        .split-view {
+            display: flex !important;
+            gap: 10px;
+        }
+
+        .split-map {
+            flex: 1;
+            height: 500px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        #map2 {
+            display: none;
+        }
+
+        /* Layer control styling */
+        /* .layer-control {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: white;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            z-index: 1000;
+            max-width: 250px;
+        } */
+
+        .control-group {
+            margin-bottom: 10px;
+        }
+
+        .control-group h4 {
+            margin: 0 0 10px 0;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .layer-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .layer-buttons .btn {
+            width: 100%;
+            padding: 6px 12px;
+            font-size: 13px;
+            text-align: left;
+        }
+
+        .opacity-control {
+            margin-top: 10px;
+            padding: 8px;
+            background: #f5f5f5;
+            border-radius: 4px;
+        }
+
+        .opacity-control label {
+            display: block;
+            font-size: 12px;
+            margin-bottom: 3px;
+            color: #666;
+        }
+
+        .opacity-control input[type="range"] {
+            width: 100%;
+            margin: 5px 0 10px;
+        }
+
+        /* Results container styling */
+        .results-row {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .result-column {
+            flex: 1;
+        }
+
+        .result-section {
+            background: white;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .sar-results .result-section {
+            border-left: 4px solid #28a745;
+        }
+
+        .mados-results .result-section {
+            border-left: 4px solid #fd7e14;
+        }
+
+        /* Responsif untuk layar kecil */
+        @media (max-width: 768px) {
+            .results-row {
+                flex-direction: column;
+            }
+            
+            /* .layer-control {
+                width: calc(100% - 20px);
+                max-width: 300px;
+                top: auto;
+                bottom: 10px;
+                right: 10px;
+            } */
+        }
+
+        .btn {
+            padding: 8px 15px;
+            margin: 5px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        .btn-primary.active {
+            background-color: #004085;
+        }
+
+        .btn-success {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .btn-warning {
+            background-color: #fd7e14;
+            color: white;
+        }
+
+        /* Container dan hasil */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        #map {
+            height: 600px;
+            margin: 0px 0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        /* Tambahkan border debug pada .layer-control-panel */
+        .layer-control-panel { border: 2px solid red !important; }
+    </style>
+</head>
+<body>
+    <!-- Spline 3D Holographic Earth Hero -->
+    <div class="spline-hero" style="width:100%;max-width:100vw;height:350px;overflow:hidden;display:flex;justify-content:center;align-items:center;background:#0a0a1a;">
+      <iframe src="https://my.spline.design/holographicearthwithdynamiclines-PH8AWbxyhYDS8k9xA4Bjs4ZH/" frameborder="0" width="100%" height="350px" style="border:none;display:block;"></iframe>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <img src="/static/images/logo.png" alt="Logo" class="logo">
+            <h2>OIL SPILL NEAR-REAL TIME DETECTION WEBGIS</h2>
+        </div>
+
+        <!-- SAR Image Processing Section -->
+        <div class="processing-section sar-section">
+            <div class="section-header">
+                <h3 style="color:#1a1a40;font-weight:800;">SAR Image Processing</h3>
+                <span class="section-badge">U-Net Model</span>
+            </div>
+            
+            <div class="info-box">
+                <strong style="color:#1a1a40;">SAR (Synthetic Aperture Radar) Processing:</strong><br>
+                <span style="color:#1a1a40;">Uses deep learning U-Net model for pixel-wise oil spill segmentation from SAR imagery. Supports GeoTIFF format with radar data.</span>
+            </div>
+            
+            <div class="input-group">
+                <label style="color:#1a1a40;font-weight:700;">SAR GeoTIFF Input:</label>
+                <input type="file" id="sarInput" accept=".tif,.tiff" onchange="updateFileNotification('sarInput', 'sarFileName')">
+                <div id="sarFileName" class="file-name-notification"></div>
+            </div>
+            
+            <button onclick="processSAR()" class="btn btn-success">Process SAR Image</button>
+        </div>
+
+        <!-- Optical Image Processing Section -->
+        <div class="processing-section optic-section">
+            <div class="section-header">
+                <h3 style="color:#1a1a40;font-weight:800;">Optical Image Processing</h3>
+                <span class="section-badge">MADOS Model</span>
+            </div>
+            
+            <div class="info-box">
+                <strong style="color:#1a1a40;">Optical/Multispectral Processing:</strong><br>
+                <span style="color:#1a1a40;">Uses MADOS (Marine Oil Spill Detection System) with MariNeXt model for oil spill detection from optical/multispectral imagery. Supports Sentinel-2 and similar data.</span>
+            </div>
+            
+            <div class="input-group">
+                <label style="color:#1a1a40;font-weight:700;">Optical GeoTIFF Input (11 bands .tif or ZIP of tiles):</label>
+                <input type="file" id="opticInput" accept=".tif,.tiff,.zip" multiple onchange="updateFileNotification('opticInput', 'opticFileName')">
+                <div id="opticFileName" class="file-name-notification"></div>
+                <small style="color:#003366;font-weight:600;display:block;margin-top:4px;">
+                    Input 11 band Sentinel-2 (B01.tif, B02.tif, B03.tif, B04.tif, B05.tif, B06.tif, B07.tif, B08.tif, B8A.tif, B11.tif, B12.tif) or ZIP containing 11 band files.<br>
+                    <span style="color:#666;font-weight:400;">Band file names must match MADOS reference order.</span>
+                </small>
+            </div>
+            
+            <div class="processing-modes" style="display:flex;gap:10px;margin-top:10px;">
+                <button onclick="processOpticSequentialFull()" class="btn btn-success">Start Sequential Processing</button>
+            </div>
+            
+            <!-- MADOS Detection Info -->
+            <div id="madosDetectionInfo" style="display: none; margin-top: 10px;">
+                <div class="info-box">
+                    <div id="madosDetectionText"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Selected Location Section -->
+        <div class="processing-section" style="background:#fff;">
+            <h3 style="color:#1a1a40;font-weight:800;">Selected Location</h3>
+            <div class="coordinate-input" style="background:#f8f9fa; color:#1a1a40;">
+                <div class="form-group">
+                    <label for="lat" style="color:#1a1a40;font-weight:700;">Latitude:</label>
+                    <input type="text" id="lat" name="lat" class="form-control" readonly style="color:#1a1a40;">
+                </div>
+                <div class="form-group">
+                    <label for="lon" style="color:#1a1a40;font-weight:700;">Longitude:</label>
+                    <input type="text" id="lon" name="lon" class="form-control" readonly style="color:#1a1a40;">
+                </div>
+            </div>
+        </div>
+
+        <!-- Oil Drift Simulation Section -->
+        <div class="upload-section">
+            <h3>Oil Drift Simulation</h3>
+            <div class="input-group">
+                <label>CSV Current Data:</label>
+                <input type="file" id="oilDriftInput" accept=".csv">
+            </div>
+            <div class="input-row">
+                <div class="input-group">
+                    <label for="startTime">Start Time (UTC+0):</label>
+                    <input type="datetime-local" id="startTime" class="form-control">
+                    <small style="color:#666; display: block; margin-top: 5px;">Please enter time in UTC+0 (Coordinated Universal Time)</small>
+                </div>
+                <div class="input-group">
+                    <label for="duration">Duration (hours):</label>
+                    <input type="number" id="duration" min="1" max="72" value="24" class="form-control">
+                </div>
+            </div>
+            <button onclick="processOilDrift()" class="btn btn-primary">Simulate Oil Drift</button>
+        </div>
+
+        <!-- SAR OpenOil Simulation Section -->
+        <div class="upload-section sar-openoil-section openoil-flex">
+            <div class="openoil-left">
+                <div class="section-header">
+                    <h3 style="color:#1a1a40;font-weight:800;">SAR OpenOil Simulation</h3>
+                    <span class="section-badge" style="background:#28a745;">SAR + OpenOil</span>
+                </div>
+                <div class="info-box">
+                    <span style="color:#1a1a40;"><strong>Run oil drift simulation using SAR-detected oil areas or manual coordinates.</strong> Uses U-Net SAR segmentation or manual input for OpenOil simulation.</span>
+                </div>
+            </div>
+            <form id="sarOpenOilForm" class="openoil-right" onsubmit="event.preventDefault(); simulateOpenOil();">
+                <div class="form-row compact-form-row">
+                    <div class="form-group checkbox-group compact-form-group">
+                        <input type="checkbox" id="useDetectedOil" disabled>
+                        <label for="useDetectedOil">Use detected oil areas</label>
+                    </div>
+                    <div class="form-group compact-form-group">
+                        <label for="oilType">Oil Type:</label>
+                        <select id="oilType"></select>
+                    </div>
+                    <div class="form-group compact-form-group">
+                        <label for="radius">Radius (m):</label>
+                        <input type="number" id="radius" value="3000">
+                    </div>
+                    <div class="form-group compact-form-group">
+                        <label for="numParticles">Particles:</label>
+                        <input type="number" id="numParticles" value="1000">
+                    </div>
+                    <div class="form-group compact-form-group">
+                        <label for="durationHours">Duration (h):</label>
+                        <input type="number" id="durationHours" value="24">
+                    </div>
+                    <div class="form-group compact-form-group">
+                        <label for="sarStartTime">Start Time (UTC+0):</label>
+                        <input type="datetime-local" id="sarStartTime" class="form-control" required>
+                        <small style="color:#666; display: block; margin-top: 5px;">Please enter time in UTC+0 (Coordinated Universal Time)</small>
+                    </div>
+                    <div class="form-group btn-group compact-form-group">
+                        <button type="submit" form="sarOpenOilForm" class="btn btn-success">Run SAR OpenOil Simulation</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- Optical OpenOil Simulation Section -->
+        <div class="upload-section optic-openoil-section openoil-flex">
+            <div class="openoil-left">
+                <div class="section-header">
+                    <h3 style="color:#1a1a40;font-weight:800;">Optical OpenOil Simulation</h3>
+                    <span class="section-badge" style="background:#fd7e14;">Optical + OpenOil</span>
+                </div>
+                <div class="info-box">
+                    <span style="color:#1a1a40;"><strong>Optical OpenOil Integration:</strong> Run oil drift simulation using detected oil areas from MADOS (Optical) processing. This will use the actual detected oil spill coordinates for more accurate simulation.</span>
+                </div>
+            </div>
+            <form id="opticalOpenOilForm" class="openoil-right" onsubmit="event.preventDefault(); simulateMadosOpenOil();">
+                <div class="form-row compact-form-row">
+                    <div class="form-group checkbox-group compact-form-group">
+                        <input type="checkbox" id="useMadosDetectedOil" disabled>
+                        <label for="useMadosDetectedOil">Use detected oil areas</label>
+                    </div>
+                    <div class="form-group compact-form-group">
+                        <label for="madosOilType">Oil Type:</label>
+                        <select id="madosOilType"></select>
+                    </div>
+                    <div class="form-group compact-form-group">
+                        <label for="madosRadius">Radius (m):</label>
+                        <input type="number" id="madosRadius" value="3000">
+                    </div>
+                    <div class="form-group compact-form-group">
+                        <label for="madosNumParticles">Particles:</label>
+                        <input type="number" id="madosNumParticles" value="1000">
+                    </div>
+                    <div class="form-group compact-form-group">
+                        <label for="madosDurationHours">Duration (h):</label>
+                        <input type="number" id="madosDurationHours" value="24">
+                    </div>
+                    <div class="form-group compact-form-group">
+                        <label for="madosStartTime">Start Time (UTC+0):</label>
+                        <input type="datetime-local" id="madosStartTime" class="form-control" required>
+                        <small style="color:#666; display: block; margin-top: 5px;">Please enter time in UTC+0 (Coordinated Universal Time)</small>
+                    </div>
+                    <div class="form-group btn-group compact-form-group">
+                        <button type="submit" form="opticalOpenOilForm" class="btn btn-warning">Run Optical OpenOil Simulation</button>
+                    </div>
+                </div>
+                <div id="madosOpenOilInfo" style="display: none; margin-top: 10px;" class="info-box">
+                    <div id="madosOpenOilText"></div>
+                </div>
+            </form>
+        </div>
+
+        <!-- New section for ESI Legends outside the map -->
+        <div class="esi-legends-section">
+            <h3 style="color:#1a1a40;font-weight:800;">Legend</h3>
+            <div id="esiLegendContainer" class="esi-legend-container">
+                <img id="esiLegendImage" src="/static/images/SensitivitasKawasanLindung.jpg" alt="Sensitivitas Kawasan Lindung Legend" class="esi-legend-image" />
+            </div>
+            <div id="esiSpesiesLegendContainer" class="esi-legend-container">
+                <img id="esiSpesiesLegendImage" src="/static/images/SensitivitasFlora-Fauna.jpg" alt="Sensitivitas Tipe Pantai Legend" class="esi-legend-image" />
+            </div>
+            <div id="esiTipePantaiLegendContainer" class="esi-legend-container">
+                <div class="legend-title">Sensitivitas Tipe Pantai</div>
+                <div class="legend-content">
+                    <div class="legend-item">
+                        <div class="legend-color tipe-pantai-sangat-tinggi"></div>
+                        <span>Sangat tinggi</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color tipe-pantai-tinggi"></div>
+                        <span>Tinggi</span>
+                    </div>
+                </div>
+            </div>
+            <div id="esiPendudukLegendContainer" class="esi-legend-container">
+                <div class="legend-title">Penduduk (jiwa)</div>
+                <div class="legend-content">
+                    <div class="legend-item">
+                        <div class="legend-color penduduk-kelas-1"></div>
+                        <span>0 - 3</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color penduduk-kelas-2"></div>
+                        <span>4 - 18</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color penduduk-kelas-3"></div>
+                        <span>19 - 34</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color penduduk-kelas-4"></div>
+                        <span>35 - 64</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color penduduk-kelas-5"></div>
+                        <span>65 - 97</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Add new legend containers for Oil Boom layers -->
+            <div id="oilBoomLegendContainer" class="esi-legend-container">
+                <div class="legend-title">Oil Boom</div>
+                <div class="legend-content">
+                    <div class="legend-item">
+                        <img src="/static/images/Gudang_Oil_Boom.png" alt="Gudang Oil Boom Legend" class="legend-icon" />
+                        <span>Gudang oil boom</span>
+                    </div>
+                     <div class="legend-item">
+                        <img src="/static/images/ferry.png" alt="Skimming Boat Legend" class="legend-icon" />
+                        <span>Skimming boat</span>
+                    </div>
+                     <div class="legend-item">
+                        <div class="legend-color" style="background-color: #00ff00; width: 20px; height: 1px;"></div>
+                        <span>Oil boom</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="map-section">
+            <!-- Container for Map and Layer Controls -->
+            <div class="map-and-controls-container">
+                <div class="map-container">
+                    <div id="map"></div>
+                    <div id="map2"></div>
+                </div>
+                
+                <!-- Layer Control Panel -->
+                <div class="layer-control-panel">
+                    <div class="control-group">
+                        <h4 onclick="toggleDropdown(this)">
+                            Layer Controls
+                            <span class="dropdown-toggle">▼</span>
+                        </h4>
+                        <div class="layer-content active">
+                            <div class="layer-buttons">
+                                <button id="rasterToggle" class="btn btn-primary active layer-dark" onclick="toggleLayer('raster')">Show SAR</button>
+                                <button id="segmentationToggle" class="btn btn-primary active layer-dark" onclick="toggleLayer('segmentation')">Show SAR Unet Segmentation</button>
+                                <button id="opticToggle" class="btn btn-primary layer-dark" onclick="toggleLayer('optic')">Show Optical</button>
+                                <button id="madosToggle" class="btn btn-primary layer-dark" onclick="toggleLayer('mados')">Show MariNeXt Detection</button>
+                                
+                                <!-- Opacity Controls -->
+                                <div class="opacity-control">
+                                    <label for="rasterOpacity">SAR Opacity:</label>
+                                    <input id="rasterOpacity" type="range" min="0" max="100" value="100" onchange="updateOpacity('raster', this.value)">
+                                </div>
+                                <div class="opacity-control">
+                                    <label for="segmentationOpacity">SAR Segmentation Opacity:</label>
+                                    <input id="segmentationOpacity" type="range" min="0" max="100" value="70" onchange="updateOpacity('segmentation', this.value)">
+                                </div>
+                                <div class="opacity-control">
+                                    <label for="opticOpacity">Optical Image Opacity:</label>
+                                    <input id="opticOpacity" type="range" min="0" max="100" value="100" onchange="updateOpacity('optic', this.value)">
+                                </div>
+                                <div class="opacity-control">
+                                    <label for="madosOpacity">MariNeXt Detection Opacity:</label>
+                                    <input id="madosOpacity" type="range" min="0" max="100" value="80" onchange="updateOpacity('mados', this.value)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <h4 onclick="toggleDropdown(this)">
+                            Oil Boom Controls
+                            <span class="dropdown-toggle">▼</span>
+                        </h4>
+                        <div class="layer-content active">
+                            <div class="layer-buttons">
+                                <button id="gudangBoomToggle" class="btn btn-primary" onclick="toggleOilBoomLayer('Gudang_Oil_Boom')">Toggle Gudang Boom</button>
+                                <button id="oilBoomToggle" class="btn btn-primary" onclick="toggleOilBoomLayer('Oil_Boom')">Toggle Oil Boom</button>
+                                <button id="skimmingBoatToggle" class="btn btn-primary" onclick="toggleOilBoomLayer('Skimming_Boat')">Toggle Skimming Boat</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Add ESI Controls -->
+                    <div class="control-group esi-control-group">
+                        <h4 onclick="toggleDropdown(this)">
+                            ESI Layers
+                            <span class="dropdown-toggle">▼</span>
+                        </h4>
+                        <div class="layer-content active">
+                            <div class="layer-buttons">
+                                <!-- ESI layer buttons will be added dynamically by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- ESI Legends (added here) -->
+            <div id="esiLegendContainer" class="esi-legend-container" style="display: none;">
+                <img id="esiLegendImage" src="/static/images/SensitivitasKawasanLindung.jpg" alt="Sensitivitas Kawasan Lindung Legend" class="esi-legend-image" />
+            </div>
+            <div id="esiSpesiesLegendContainer" class="esi-legend-container" style="display: none;">
+                <img id="esiSpesiesLegendImage" src="/static/images/SensitivitasFlora-Fauna.jpg" alt="Sensitivitas Tipe Pantai Legend" class="esi-legend-image" />
+            </div>
+            <!-- Add new legend containers -->
+            <div id="esiTipePantaiLegendContainer" class="esi-legend-container" style="display: none;">
+                <div class="legend-title">Sensitivitas Tipe Pantai</div>
+                <div class="legend-content">
+                    <div class="legend-item">
+                        <div class="legend-color tipe-pantai-sangat-tinggi"></div>
+                        <span>Sangat tinggi</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color tipe-pantai-tinggi"></div>
+                        <span>Tinggi</span>
+                    </div>
+                </div>
+            </div>
+            <div id="esiPendudukLegendContainer" class="esi-legend-container" style="display: none;">
+                <div class="legend-title">Penduduk (jiwa)</div>
+                <div class="legend-content">
+                    <div class="legend-item">
+                        <div class="legend-color penduduk-kelas-1"></div>
+                        <span>0 - 3</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color penduduk-kelas-2"></div>
+                        <span>4 - 18</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color penduduk-kelas-3"></div>
+                        <span>19 - 34</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color penduduk-kelas-4"></div>
+                        <span>35 - 64</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color penduduk-kelas-5"></div>
+                        <span>65 - 97</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Time Slider for Animation -->
+        <div class="time-slider-container" id="timeSliderContainer" style="display:none;">
+            <h4>Oil Drift Animation</h4>
+            <div class="time-display" id="timeDisplay">Time: -</div>
+            <input type="range" min="0" max="0" value="0" class="time-slider" id="timeSlider">
+            <div class="time-controls">
+                <button id="playBtn">Play</button>
+                <button id="pauseBtn" disabled>Pause</button>
+                <button id="resetBtn">Reset</button>
+            </div>
+        </div>
+        
+        <!-- OpenOil Results Container -->
+        <div id="openoilResultContainerSAR" class="openoil-result-section sar-openoil-result" style="display: none;">
+            <h3 class="openoil-result-title" style="color:#28a745;">SAR OpenOil Simulation Results</h3>
+            <div class="result-images">
+                <div class="image-container">
+                    <h5>Trajectory</h5>
+                    <img id="sarOpenOilTrajectory" style="max-width:100%;display:none;" />
+                </div>
+                <div class="image-container">
+                    <h5>Oil Budget</h5>
+                    <img id="sarOpenOilBudget" style="max-width:100%;display:none;" />
+                </div>
+                <div class="image-container">
+                    <h5>Animation</h5>
+                    <img id="sarOpenOilAnimation" style="max-width:100%;display:none;" />
+                </div>
+            </div>
+            <div id="sarTimeSliderContainer"></div>
+            <div id="sarOpenOilInfo" style="display: none; margin-top: 10px;" class="info-box">
+                <div id="sarOpenOilText"></div>
+            </div>
+        </div>
+        <div id="openoilResultContainerOptic" class="openoil-result-section optic-openoil-result" style="display: none;">
+            <h3 class="openoil-result-title" style="color:#fd7e14;">Optical OpenOil Simulation Results</h3>
+            <div class="result-images">
+                <div class="image-container">
+                    <h5>Trajectory</h5>
+                    <img id="opticOpenOilTrajectory" style="max-width:100%;display:none;" />
+                </div>
+                <div class="image-container">
+                    <h5>Oil Budget</h5>
+                    <img id="opticOpenOilBudget" style="max-width:100%;display:none;" />
+                </div>
+                <div class="image-container">
+                    <h5>Animation</h5>
+                    <img id="opticOpenOilAnimation" style="max-width:100%;display:none;" />
+                </div>
+            </div>
+            <div id="opticTimeSliderContainer"></div>
+        </div>
+
+        <!-- Results Container (moved below map-section) -->
+        <div class="results-row">
+            <!-- SAR Results Column -->
+            <div class="result-column sar-results">
+                <h3 style="color:#f8fafd;font-weight:800;">SAR Processing Results</h3>
+                <div class="result-section">
+                    <h4 style="color:#1a1a40;font-weight:700;">Original SAR Image</h4>
+                    <img id="originalSARImage" style="max-width: 100%; display: none;" />
+                </div>
+                <div class="result-section">
+                    <h4 style="color:#1a1a40;font-weight:700;">U-Net Segmentation Result</h4>
+                    <img id="sarSegmentationImage" style="max-width: 100%; background-color: grey; display: none;" />
+                </div>
+                <div class="legend">
+                    <h4 style="color:#1a1a40;font-weight:700;">SAR Classes</h4>
+                    <div class="legend-item" data-class="background">
+                        <div class="legend-color"></div>
+                        <span>Background/Water</span>
+                    </div>
+                    <div class="legend-item" data-class="oil">
+                        <div class="legend-color"></div>
+                        <span>Oil</span>
+                    </div>
+                    <div class="legend-item" data-class="lookalikes">
+                        <div class="legend-color"></div>
+                        <span>Lookalikes/Current</span>
+                    </div>
+                    <div class="legend-item" data-class="antena parabola">
+                        <div class="legend-color"></div>
+                        <span>Antena Parabola</span>
+                    </div>
+                    <div class="legend-item" data-class="land">
+                        <div class="legend-color"></div>
+                        <span>Land</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Optical Results Column -->
+            <div class="result-column optic-results">
+                <h3 style="color:#f8fafd;font-weight:800;">Optical Processing Results</h3>
+                <div class="result-section">
+                    <h4 style="color:#1a1a40;font-weight:700;">Original Optical Image</h4>
+                    <img id="originalOpticImage" style="max-width: 100%; display: none;" />
+                </div>
+                <div class="result-section">
+                    <h4 style="color:#1a1a40;font-weight:700;">MariNeXt Detection Result</h4>
+                    <img id="madosSegmentationImage" style="max-width: 100%; background-color: grey; display: none;" />
+                </div>
+                <div class="legend">
+                    <h4 style="color:#1a1a40;font-weight:700;">MariNeXt Classes</h4>
+                    <div class="legend-item" data-class="marine-water"><div class="legend-color"></div><span>Marine Water</span></div>
+                    <div class="legend-item" data-class="marine-debris"><div class="legend-color"></div><span>Marine Debris</span></div>
+                    <div class="legend-item" data-class="dense-sargassum"><div class="legend-color"></div><span>Dense Sargassum</span></div>
+                    <div class="legend-item" data-class="sparse-algae"><div class="legend-color"></div><span>Sparse Floating Algae</span></div>
+                    <div class="legend-item" data-class="organic-material"><div class="legend-color"></div><span>Natural Organic Material</span></div>
+                    <div class="legend-item" data-class="ship"><div class="legend-color"></div><span>Ship</span></div>
+                    <div class="legend-item" data-class="oil-spill"><div class="legend-color"></div><span>Oil Spill</span></div>
+                    <div class="legend-item" data-class="sediment-water"><div class="legend-color"></div><span>Sediment-Laden Water</span></div>
+                    <div class="legend-item" data-class="foam"><div class="legend-color"></div><span>Foam</span></div>
+                    <div class="legend-item" data-class="turbid-water"><div class="legend-color"></div><span>Turbid Water</span></div>
+                    <div class="legend-item" data-class="shallow-water"><div class="legend-color"></div><span>Shallow Water</span></div>
+                    <div class="legend-item" data-class="waves"><div class="legend-color"></div><span>Waves & Wakes</span></div>
+                    <div class="legend-item" data-class="oil-platform"><div class="legend-color"></div><span>Oil Platform</span></div>
+                    <div class="legend-item" data-class="jellyfish"><div class="legend-color"></div><span>Jellyfish</span></div>
+                    <div class="legend-item" data-class="sea-snot"><div class="legend-color"></div><span>Sea snot</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay" style="display: none;">
+        <div class="spinner">
+            <div class="spinner-icon"></div>
+            <span id="loadingMessage">Loading...</span>
+            <!-- Add progress indicator -->
+            <div id="progressContainer" style="display:none; margin-left: 10px;">
+                <div class="progress-bar">
+                    <div id="progressBar" class="progress-bar-fill" style="width: 0%;"></div>
+                </div>
+                <span id="progressText">0%</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/@turf/turf@6/turf.min.js"></script>
+    <script src="/static/script.js" defer></script>
+
+    <!-- Supervisors Section -->
+    <div class="container" style="margin-top: 50px; margin-bottom: 30px;">
+        <div class="supervisors-section" style="text-align: center; padding: 20px; background: #f8f9fa; border-radius: 8px;">
+            <h3 style="color: #1a1a40; margin-bottom: 30px; font-size: 24px; font-weight: 600;">Supervisors</h3>
+            <div class="supervisors-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; justify-items: center;">
+                <div class="supervisor-member" style="display: flex; flex-direction: column; align-items: center;">
+                    <img src="/static/images/BuRian.png" alt="Bu Rian" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                    <p style="margin: 0; font-size: 14px; color: #333; line-height: 1.4;">Dr. Riantini Virtriana, S.T., M.T.</p>
+                </div>
+                <div class="supervisor-member" style="display: flex; flex-direction: column; align-items: center;">
+                    <img src="/static/images/PakAgung.jpg" alt="Pak Agung" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                    <p style="margin: 0; font-size: 14px; color: #333; line-height: 1.4;">Dr. Ir. Agung Budi Harto, M.Sc.</p>
+                </div>
+                <div class="supervisor-member" style="display: flex; flex-direction: column; align-items: center;">
+                    <img src="/static/images/PakTeguh.jpg" alt="Pak Teguh" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                    <p style="margin: 0; font-size: 14px; color: #333; line-height: 1.4;">Teguh Purnama Sidiq, S.T., M.T.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Team Members Section -->
+    <div class="container" style="margin-top: 50px; margin-bottom: 50px;">
+        <div class="team-section" style="text-align: center; padding: 20px; background: #f8f9fa; border-radius: 8px;">
+            <h3 style="color: #1a1a40; margin-bottom: 30px; font-size: 24px; font-weight: 600;">Developers</h3>
+            <div class="team-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; justify-items: center;">
+                <div class="team-member" style="display: flex; flex-direction: column; align-items: center;">
+                    <img src="/static/images/Alvito Ilham Thariq Aziz.jpg" alt="Alvito Ilham Thariq Aziz" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                    <p style="margin: 0; font-size: 14px; color: #333; line-height: 1.4;">Alvito Ilham<br>Thariq Aziz</p>
+                </div>
+                <div class="team-member" style="display: flex; flex-direction: column; align-items: center;">
+                    <img src="/static/images/Laila Zahra Salsabila.jpg" alt="Laila Zahra Salsabila" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                    <p style="margin: 0; font-size: 14px; color: #333; line-height: 1.4;">Laila Zahra<br>Salsabila</p>
+                </div>
+                <div class="team-member" style="display: flex; flex-direction: column; align-items: center;">
+                    <img src="/static/images/Rhafli Rizki Pratama.jpg" alt="Rhafli Rizki Pratama" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                    <p style="margin: 0; font-size: 14px; color: #333; line-height: 1.4;">Rhafli Rizki<br>Pratama</p>
+                </div>
+                <div class="team-member" style="display: flex; flex-direction: column; align-items: center;">
+                    <img src="/static/images/Sulthan Azhar Irawan.jpg" alt="Sulthan Azhar Irawan" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                    <p style="margin: 0; font-size: 14px; color: #333; line-height: 1.4;">Sulthan Azhar<br>Irawan</p>
+                </div>
+                <div class="team-member" style="display: flex; flex-direction: column; align-items: center;">
+                    <img src="/static/images/Zelika Diva Kirana.jpg" alt="Zelika Diva Kirana" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                    <p style="margin: 0; font-size: 14px; color: #333; line-height: 1.4;">Zelika Diva<br>Kirana</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Data Sources Footer -->
+    <div class="container" style="margin-top: 30px; margin-bottom: 30px;">
+        <div class="data-sources-footer" style="text-align: center; padding: 20px; background: rgba(20, 24, 48, 0.95); border-radius: 8px; border: 1px solid rgba(0, 234, 255, 0.2);">
+            <h3 style="color: #04d7f8; margin-bottom: 20px; font-size: 20px; font-weight: 600;">Data Sources</h3>
+            <div class="data-sources-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; justify-items: center;">
+                <div class="data-source" style="padding: 15px; background: rgba(4, 215, 248, 0.05); border-radius: 6px; border: 1px solid rgba(4, 215, 248, 0.2);">
+                    <h4 style="color: #04d7f8; margin-bottom: 10px; font-size: 16px;">HYCOM Global Ocean Forecast System</h4>
+                    <p style="color: #f8fafd; font-size: 14px; margin: 0;">© 2024 HYCOM Consortium. Data provided by the HYCOM Consortium for Data Assimilative Modeling.</p>
+                </div>
+                <div class="data-source" style="padding: 15px; background: rgba(4, 215, 248, 0.05); border-radius: 6px; border: 1px solid rgba(4, 215, 248, 0.2);">
+                    <h4 style="color: #04d7f8; margin-bottom: 10px; font-size: 16px;">NCEP Global Forecast System (GFS)</h4>
+                    <p style="color: #f8fafd; font-size: 14px; margin: 0;">© 2024 NOAA/NCEP. Data provided by NOAA/NCEP Global Forecast System.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,410 @@
+2025-05-15 18:05:36,139 - INFO - Starting MADOS service monitor
+2025-05-15 18:05:40,246 - INFO - Restarting MADOS service...
+2025-05-15 18:05:44,842 - INFO - Starting MADOS service...
+2025-05-15 18:05:44,842 - INFO - Cleaning up temp directory: C:\Users\alvito\AppData\Local\Temp
+2025-05-15 18:05:44,842 - INFO - Removed 0 temporary MADOS job directories
+2025-05-15 18:05:46,115 - INFO - Started MADOS service with PID: 17372
+2025-05-15 18:05:50,183 - WARNING - MADOS service failed or using too much memory (failure #1)
+2025-05-15 18:06:14,268 - WARNING - MADOS service failed or using too much memory (failure #2)
+2025-05-15 18:06:38,337 - WARNING - MADOS service failed or using too much memory (failure #3)
+2025-05-15 18:07:02,439 - WARNING - MADOS service failed or using too much memory (failure #4)
+2025-05-15 18:07:02,439 - INFO - Restarting MADOS service...
+2025-05-15 18:07:07,031 - INFO - Starting MADOS service...
+2025-05-15 18:07:07,031 - INFO - Cleaning up temp directory: C:\Users\alvito\AppData\Local\Temp
+2025-05-15 18:07:07,031 - INFO - Removed 0 temporary MADOS job directories
+2025-05-15 18:07:07,031 - INFO - Started MADOS service with PID: 13100
+2025-05-15 18:07:07,031 - WARNING - Too many consecutive failures (4), clearing all temp files
+2025-05-15 18:07:07,031 - INFO - Cleaning up temp directory: C:\Users\alvito\AppData\Local\Temp
+2025-05-15 18:07:07,031 - INFO - Removed 0 temporary MADOS job directories
+2025-05-15 18:07:31,126 - WARNING - MADOS service failed or using too much memory (failure #1)
+2025-05-15 18:07:55,246 - WARNING - MADOS service failed or using too much memory (failure #2)
+2025-05-15 18:08:19,312 - WARNING - MADOS service failed or using too much memory (failure #3)
+2025-05-15 18:08:19,312 - INFO - Restarting MADOS service...
+2025-05-15 18:08:24,166 - INFO - Starting MADOS service...
+2025-05-15 18:08:24,166 - INFO - Cleaning up temp directory: C:\Users\alvito\AppData\Local\Temp
+2025-05-15 18:08:24,182 - INFO - Removed 0 temporary MADOS job directories
+2025-05-15 18:08:24,190 - INFO - Started MADOS service with PID: 2776
+2025-05-15 18:08:24,191 - WARNING - Too many consecutive failures (3), clearing all temp files
+2025-05-15 18:08:24,191 - INFO - Cleaning up temp directory: C:\Users\alvito\AppData\Local\Temp
+2025-05-15 18:08:24,196 - INFO - Removed 0 temporary MADOS job directories
+2025-05-15 18:08:48,233 - WARNING - MADOS service failed or using too much memory (failure #1)
+2025-05-15 18:09:12,344 - WARNING - MADOS service failed or using too much memory (failure #2)
+2025-05-15 18:09:36,466 - WARNING - MADOS service failed or using too much memory (failure #3)
+2025-05-15 18:09:36,467 - INFO - Restarting MADOS service...
+2025-05-15 18:09:41,095 - INFO - Starting MADOS service...
+2025-05-15 18:09:41,095 - INFO - Cleaning up temp directory: C:\Users\alvito\AppData\Local\Temp
+2025-05-15 18:09:41,102 - INFO - Removed 0 temporary MADOS job directories
+2025-05-15 18:09:41,102 - INFO - Started MADOS service with PID: 5344
+2025-05-15 18:09:41,102 - WARNING - Too many consecutive failures (3), clearing all temp files
+2025-05-15 18:09:41,102 - INFO - Cleaning up temp directory: C:\Users\alvito\AppData\Local\Temp
+2025-05-15 18:09:41,112 - INFO - Removed 0 temporary MADOS job directories
+2025-05-15 18:10:05,189 - WARNING - MADOS service failed or using too much memory (failure #1)
+2025-05-15 18:10:29,254 - WARNING - MADOS service failed or using too much memory (failure #2)
+2025-05-15 18:10:53,359 - WARNING - MADOS service failed or using too much memory (failure #3)
+2025-05-15 18:10:53,359 - INFO - Restarting MADOS service...
+2025-05-15 18:10:57,996 - INFO - Starting MADOS service...
+2025-05-15 18:10:57,996 - INFO - Cleaning up temp directory: C:\Users\alvito\AppData\Local\Temp
+2025-05-15 18:10:57,996 - INFO - Removed 0 temporary MADOS job directories
+2025-05-15 18:10:57,996 - INFO - Started MADOS service with PID: 10404
+2025-05-15 18:10:57,996 - WARNING - Too many consecutive failures (3), clearing all temp files
+2025-05-15 18:10:57,996 - INFO - Cleaning up temp directory: C:\Users\alvito\AppData\Local\Temp
+2025-05-15 18:10:57,996 - INFO - Removed 0 temporary MADOS job directories
+2025-05-15 18:11:22,114 - WARNING - MADOS service failed or using too much memory (failure #1)
+2025-05-15 18:11:46,229 - WARNING - MADOS service failed or using too much memory (failure #2)
+2025-05-15 18:12:10,326 - WARNING - MADOS service failed or using too much memory (failure #3)
+2025-05-15 18:12:10,328 - INFO - Restarting MADOS service...
+2025-05-15 18:12:14,954 - INFO - Starting MADOS service...
+2025-05-15 18:12:14,954 - INFO - Cleaning up temp directory: C:\Users\alvito\AppData\Local\Temp
+2025-05-15 18:12:14,954 - INFO - Removed 0 temporary MADOS job directories
+2025-05-15 18:12:14,954 - INFO - Started MADOS service with PID: 14880
+2025-05-15 18:12:14,954 - WARNING - Too many consecutive failures (3), clearing all temp files
+2025-05-15 18:12:14,954 - INFO - Cleaning up temp directory: C:\Users\alvito\AppData\Local\Temp
+2025-05-15 18:12:14,954 - INFO - Removed 0 temporary MADOS job directories
+2025-05-15 18:12:39,079 - WARNING - MADOS service failed or using too much memory (failure #1)
+2025-05-15 18:13:03,187 - WARNING - MADOS service failed or using too much memory (failure #2)
+2025-05-15 18:13:27,286 - WARNING - MADOS service failed or using too much memory (failure #3)
+2025-05-15 18:13:27,286 - INFO - Restarting MADOS service...
+2025-05-15 18:13:31,947 - INFO - Starting MADOS service...
+2025-05-15 18:13:31,947 - INFO - Cleaning up temp directory: C:\Users\alvito\AppData\Local\Temp
+2025-05-15 18:13:31,947 - INFO - Removed 0 temporary MADOS job directories
+2025-05-15 18:13:31,947 - INFO - Started MADOS service with PID: 2268
+2025-05-15 18:13:31,947 - WARNING - Too many consecutive failures (3), clearing all temp files
+2025-05-15 18:13:31,947 - INFO - Cleaning up temp directory: C:\Users\alvito\AppData\Local\Temp
+2025-05-15 18:13:31,947 - INFO - Removed 0 temporary MADOS job directories
+2025-05-15 18:13:56,042 - WARNING - MADOS service failed or using too much memory (failure #1)
+2025-05-15 18:14:20,109 - WARNING - MADOS service failed or using too much memory (failure #2)
+2025-05-15 18:14:44,181 - WARNING - MADOS service failed or using too much memory (failure #3)
+2025-05-15 18:14:44,182 - INFO - Restarting MADOS service...
+2025-05-15 18:14:48,941 - INFO - Starting MADOS service...
+2025-05-15 18:14:48,941 - INFO - Cleaning up temp directory: C:\Users\alvito\AppData\Local\Temp
+2025-05-15 18:14:48,941 - INFO - Removed 0 temporary MADOS job directories
+2025-05-15 18:14:48,941 - INFO - Started MADOS service with PID: 11540
+2025-05-15 18:14:48,957 - WARNING - Too many consecutive failures (3), clearing all temp files
+2025-05-15 18:14:48,957 - INFO - Cleaning up temp directory: C:\Users\alvito\AppData\Local\Temp
+2025-05-15 18:14:48,957 - INFO - Removed 0 temporary MADOS job directories
+2025-05-15 18:15:13,051 - WARNING - MADOS service failed or using too much memory (failure #1)
+2025-05-15 18:15:37,125 - WARNING - MADOS service failed or using too much memory (failure #2)
+2025-05-15 18:16:01,222 - WARNING - MADOS service failed or using too much memory (failure #3)
+2025-05-15 18:16:01,222 - INFO - Restarting MADOS service...
+2025-05-15 18:16:06,002 - INFO - Starting MADOS service...
+2025-05-15 18:16:06,002 - INFO - Cleaning up temp directory: C:\Users\alvito\AppData\Local\Temp
+2025-05-15 18:16:06,028 - INFO - Removed 0 temporary MADOS job directories
+2025-05-15 18:16:06,034 - INFO - Started MADOS service with PID: 7532
+2025-05-15 18:16:06,034 - WARNING - Too many consecutive failures (3), clearing all temp files
+2025-05-15 18:16:06,034 - INFO - Cleaning up temp directory: C:\Users\alvito\AppData\Local\Temp
+2025-05-15 18:16:06,034 - INFO - Removed 0 temporary MADOS job directories
+2025-05-15 18:16:30,130 - WARNING - MADOS service failed or using too much memory (failure #1)
+2025-05-15 18:16:54,199 - WARNING - MADOS service failed or using too much memory (failure #2)
+2025-05-15 18:17:18,284 - WARNING - MADOS service failed or using too much memory (failure #3)
+2025-05-15 18:17:18,284 - INFO - Restarting MADOS service...
+2025-05-15 18:17:22,942 - INFO - Starting MADOS service...
+2025-05-15 18:17:22,942 - INFO - Cleaning up temp directory: C:\Users\alvito\AppData\Local\Temp
+2025-05-15 18:17:23,115 - INFO - Removed 0 temporary MADOS job directories
+2025-05-15 18:17:23,115 - INFO - Started MADOS service with PID: 15496
+2025-05-15 18:17:23,115 - WARNING - Too many consecutive failures (3), clearing all temp files
+2025-05-15 18:17:23,115 - INFO - Cleaning up temp directory: C:\Users\alvito\AppData\Local\Temp
+2025-05-15 18:17:23,125 - INFO - Removed 0 temporary MADOS job directories
+2025-05-15 18:17:47,231 - WARNING - MADOS service failed or using too much memory (failure #1)
+2025-05-15 18:18:11,319 - WARNING - MADOS service failed or using too much memory (failure #2)
+2025-05-15 18:18:35,427 - WARNING - MADOS service failed or using too much memory (failure #3)
+2025-05-15 18:18:35,427 - INFO - Restarting MADOS service...
+2025-05-15 18:18:40,231 - INFO - Starting MADOS service...
+2025-05-15 18:18:40,231 - INFO - Cleaning up temp directory: C:\Users\alvito\AppData\Local\Temp
+2025-05-15 18:18:40,310 - INFO - Removed 0 temporary MADOS job directories
+2025-05-15 18:18:40,310 - INFO - Started MADOS service with PID: 1296
+2025-05-15 18:18:40,318 - WARNING - Too many consecutive failures (3), clearing all temp files
+2025-05-15 18:18:40,318 - INFO - Cleaning up temp directory: C:\Users\alvito\AppData\Local\Temp
+2025-05-15 18:18:40,322 - INFO - Removed 0 temporary MADOS job directories
+2025-05-15 18:19:04,380 - WARNING - MADOS service failed or using too much memory (failure #1)
+2025-05-15 18:19:28,454 - WARNING - MADOS service failed or using too much memory (failure #2)
+2025-05-15 18:19:52,545 - WARNING - MADOS service failed or using too much memory (failure #3)
+2025-05-15 18:19:52,545 - INFO - Restarting MADOS service...
+2025-05-15 18:19:57,321 - INFO - Starting MADOS service...
+2025-05-15 18:19:57,322 - INFO - Cleaning up temp directory: C:\Users\alvito\AppData\Local\Temp
+2025-05-15 18:19:57,326 - INFO - Removed 0 temporary MADOS job directories
+2025-05-15 18:19:57,330 - INFO - Started MADOS service with PID: 3600
+2025-05-15 18:19:57,331 - WARNING - Too many consecutive failures (3), clearing all temp files
+2025-05-15 18:19:57,331 - INFO - Cleaning up temp directory: C:\Users\alvito\AppData\Local\Temp
+2025-05-15 18:19:57,334 - INFO - Removed 0 temporary MADOS job directories
+2025-05-15 18:20:21,419 - WARNING - MADOS service failed or using too much memory (failure #1)
+2025-05-15 18:20:45,503 - WARNING - MADOS service failed or using too much memory (failure #2)
+2025-05-15 18:21:09,586 - WARNING - MADOS service failed or using too much memory (failure #3)
+2025-05-15 18:21:09,586 - INFO - Restarting MADOS service...
+2025-05-15 18:21:14,471 - INFO - Starting MADOS service...
+2025-05-15 18:21:14,471 - INFO - Cleaning up temp directory: C:\Users\alvito\AppData\Local\Temp
+2025-05-15 18:21:14,506 - INFO - Removed 0 temporary MADOS job directories
+2025-05-15 18:21:14,519 - INFO - Started MADOS service with PID: 14716
+2025-05-15 18:21:14,519 - WARNING - Too many consecutive failures (3), clearing all temp files
+2025-05-15 18:21:14,519 - INFO - Cleaning up temp directory: C:\Users\alvito\AppData\Local\Temp
+2025-05-15 18:21:14,529 - INFO - Removed 0 temporary MADOS job directories
+2025-05-15 18:21:38,620 - WARNING - MADOS service failed or using too much memory (failure #1)
+2025-05-15 18:22:02,718 - WARNING - MADOS service failed or using too much memory (failure #2)
+2025-05-15 18:22:26,816 - WARNING - MADOS service failed or using too much memory (failure #3)
+2025-05-15 18:22:26,816 - INFO - Restarting MADOS service...
+2025-05-15 18:22:31,698 - INFO - Starting MADOS service...
+2025-05-15 18:22:31,698 - INFO - Cleaning up temp directory: C:\Users\alvito\AppData\Local\Temp
+2025-05-15 18:22:31,793 - INFO - Removed 0 temporary MADOS job directories
+2025-05-15 18:22:31,793 - INFO - Started MADOS service with PID: 10384
+2025-05-15 18:22:31,793 - WARNING - Too many consecutive failures (3), clearing all temp files
+2025-05-15 18:22:31,793 - INFO - Cleaning up temp directory: C:\Users\alvito\AppData\Local\Temp
+2025-05-15 18:22:31,809 - INFO - Removed 0 temporary MADOS job directories
+2025-05-15 18:22:55,893 - WARNING - MADOS service failed or using too much memory (failure #1)
+2025-05-15 18:23:19,986 - WARNING - MADOS service failed or using too much memory (failure #2)
+2025-05-15 18:23:44,090 - WARNING - MADOS service failed or using too much memory (failure #3)
+2025-05-15 18:23:44,090 - INFO - Restarting MADOS service...
+2025-05-15 18:23:48,796 - INFO - Starting MADOS service...
+2025-05-15 18:23:48,796 - INFO - Cleaning up temp directory: C:\Users\alvito\AppData\Local\Temp
+2025-05-15 18:23:48,806 - INFO - Removed 0 temporary MADOS job directories
+2025-05-15 18:23:48,811 - INFO - Started MADOS service with PID: 17720
+2025-05-15 18:23:48,811 - WARNING - Too many consecutive failures (3), clearing all temp files
+2025-05-15 18:23:48,811 - INFO - Cleaning up temp directory: C:\Users\alvito\AppData\Local\Temp
+2025-05-15 18:23:48,811 - INFO - Removed 0 temporary MADOS job directories
+2025-05-15 18:24:12,923 - WARNING - MADOS service failed or using too much memory (failure #1)
+2025-05-15 18:24:37,015 - WARNING - MADOS service failed or using too much memory (failure #2)
+2025-05-15 18:25:01,066 - WARNING - MADOS service failed or using too much memory (failure #3)
+2025-05-15 18:25:01,066 - INFO - Restarting MADOS service...
+2025-05-15 18:25:05,852 - INFO - Starting MADOS service...
+2025-05-15 18:25:05,852 - INFO - Cleaning up temp directory: C:\Users\alvito\AppData\Local\Temp
+2025-05-15 18:25:05,902 - INFO - Removed 0 temporary MADOS job directories
+2025-05-15 18:25:05,909 - INFO - Started MADOS service with PID: 4880
+2025-05-15 18:25:05,909 - WARNING - Too many consecutive failures (3), clearing all temp files
+2025-05-15 18:25:05,909 - INFO - Cleaning up temp directory: C:\Users\alvito\AppData\Local\Temp
+2025-05-15 18:25:05,913 - INFO - Removed 0 temporary MADOS job directories
+2025-05-15 18:25:30,050 - WARNING - MADOS service failed or using too much memory (failure #1)
+2025-05-15 18:25:54,168 - WARNING - MADOS service failed or using too much memory (failure #2)
+2025-05-15 18:26:18,276 - WARNING - MADOS service failed or using too much memory (failure #3)
+2025-05-15 18:26:18,276 - INFO - Restarting MADOS service...
+2025-05-15 18:26:18,833 - INFO - Terminating existing MADOS process (PID: 17284)
+2025-05-15 18:26:22,918 - INFO - Starting MADOS service...
+2025-05-15 18:26:22,918 - INFO - Cleaning up temp directory: C:\Users\alvito\AppData\Local\Temp
+2025-05-15 18:26:22,918 - INFO - Removed 0 temporary MADOS job directories
+2025-05-15 18:26:22,928 - INFO - Started MADOS service with PID: 11136
+2025-05-15 18:26:22,928 - WARNING - Too many consecutive failures (3), clearing all temp files
+2025-05-15 18:26:22,928 - INFO - Cleaning up temp directory: C:\Users\alvito\AppData\Local\Temp
+2025-05-15 18:26:22,937 - INFO - Removed 0 temporary MADOS job directories
+2025-05-15 18:26:47,069 - WARNING - MADOS service failed or using too much memory (failure #1)
+2025-05-15 18:27:11,167 - WARNING - MADOS service failed or using too much memory (failure #2)
+2025-05-15 18:27:35,303 - WARNING - MADOS service failed or using too much memory (failure #3)
+2025-05-15 18:27:35,303 - INFO - Restarting MADOS service...
+2025-05-15 18:27:39,927 - INFO - Starting MADOS service...
+2025-05-15 18:27:39,927 - INFO - Cleaning up temp directory: C:\Users\alvito\AppData\Local\Temp
+2025-05-15 18:27:39,927 - INFO - Removed 0 temporary MADOS job directories
+2025-05-15 18:27:39,927 - INFO - Started MADOS service with PID: 13864
+2025-05-15 18:27:39,927 - WARNING - Too many consecutive failures (3), clearing all temp files
+2025-05-15 18:27:39,927 - INFO - Cleaning up temp directory: C:\Users\alvito\AppData\Local\Temp
+2025-05-15 18:27:39,939 - INFO - Removed 0 temporary MADOS job directories
+2025-05-15 18:28:04,048 - WARNING - MADOS service failed or using too much memory (failure #1)
+2025-05-15 18:28:28,156 - WARNING - MADOS service failed or using too much memory (failure #2)
+2025-05-15 18:28:52,235 - WARNING - MADOS service failed or using too much memory (failure #3)
+2025-05-15 18:28:52,235 - INFO - Restarting MADOS service...
+2025-05-15 18:28:56,859 - INFO - Starting MADOS service...
+2025-05-15 18:28:56,859 - INFO - Cleaning up temp directory: C:\Users\alvito\AppData\Local\Temp
+2025-05-15 18:28:56,863 - INFO - Removed 0 temporary MADOS job directories
+2025-05-15 18:28:56,866 - INFO - Started MADOS service with PID: 18256
+2025-05-15 18:28:56,866 - WARNING - Too many consecutive failures (3), clearing all temp files
+2025-05-15 18:28:56,866 - INFO - Cleaning up temp directory: C:\Users\alvito\AppData\Local\Temp
+2025-05-15 18:28:56,870 - INFO - Removed 0 temporary MADOS job directories
+2025-05-15 18:29:20,934 - WARNING - MADOS service failed or using too much memory (failure #1)
+2025-05-15 18:29:44,997 - WARNING - MADOS service failed or using too much memory (failure #2)
+2025-05-15 18:30:09,122 - WARNING - MADOS service failed or using too much memory (failure #3)
+2025-05-15 18:30:09,122 - INFO - Restarting MADOS service...
+2025-05-15 18:30:13,758 - INFO - Starting MADOS service...
+2025-05-15 18:30:13,758 - INFO - Cleaning up temp directory: C:\Users\alvito\AppData\Local\Temp
+2025-05-15 18:30:13,758 - INFO - Removed 0 temporary MADOS job directories
+2025-05-15 18:30:13,758 - INFO - Started MADOS service with PID: 12484
+2025-05-15 18:30:13,758 - WARNING - Too many consecutive failures (3), clearing all temp files
+2025-05-15 18:30:13,758 - INFO - Cleaning up temp directory: C:\Users\alvito\AppData\Local\Temp
+2025-05-15 18:30:13,768 - INFO - Removed 0 temporary MADOS job directories
+2025-05-15 18:30:37,900 - WARNING - MADOS service failed or using too much memory (failure #1)
+2025-05-15 18:31:01,975 - WARNING - MADOS service failed or using too much memory (failure #2)
+2025-05-15 18:31:26,104 - WARNING - MADOS service failed or using too much memory (failure #3)
+2025-05-15 18:31:26,104 - INFO - Restarting MADOS service...
+2025-05-15 18:31:30,736 - INFO - Starting MADOS service...
+2025-05-15 18:31:30,736 - INFO - Cleaning up temp directory: C:\Users\alvito\AppData\Local\Temp
+2025-05-15 18:31:30,746 - INFO - Removed 0 temporary MADOS job directories
+2025-05-15 18:31:30,749 - INFO - Started MADOS service with PID: 10628
+2025-05-15 18:31:30,749 - WARNING - Too many consecutive failures (3), clearing all temp files
+2025-05-15 18:31:30,749 - INFO - Cleaning up temp directory: C:\Users\alvito\AppData\Local\Temp
+2025-05-15 18:31:30,750 - INFO - Removed 0 temporary MADOS job directories
+2025-05-15 18:31:54,861 - WARNING - MADOS service failed or using too much memory (failure #1)
+2025-05-15 18:32:18,959 - WARNING - MADOS service failed or using too much memory (failure #2)
+2025-05-15 18:32:43,055 - WARNING - MADOS service failed or using too much memory (failure #3)
+2025-05-15 18:32:43,055 - INFO - Restarting MADOS service...
+2025-05-15 18:32:47,654 - INFO - Starting MADOS service...
+2025-05-15 18:32:47,654 - INFO - Cleaning up temp directory: C:\Users\alvito\AppData\Local\Temp
+2025-05-15 18:32:47,658 - INFO - Removed 0 temporary MADOS job directories
+2025-05-15 18:32:47,662 - INFO - Started MADOS service with PID: 14680
+2025-05-15 18:32:47,662 - WARNING - Too many consecutive failures (3), clearing all temp files
+2025-05-15 18:32:47,662 - INFO - Cleaning up temp directory: C:\Users\alvito\AppData\Local\Temp
+2025-05-15 18:32:47,665 - INFO - Removed 0 temporary MADOS job directories
+2025-05-15 18:33:11,755 - WARNING - MADOS service failed or using too much memory (failure #1)
+2025-05-15 18:33:35,866 - WARNING - MADOS service failed or using too much memory (failure #2)
+2025-05-15 18:33:59,996 - WARNING - MADOS service failed or using too much memory (failure #3)
+2025-05-15 18:33:59,996 - INFO - Restarting MADOS service...
+2025-05-15 18:34:04,735 - INFO - Starting MADOS service...
+2025-05-15 18:34:04,735 - INFO - Cleaning up temp directory: C:\Users\alvito\AppData\Local\Temp
+2025-05-15 18:34:04,735 - INFO - Removed 0 temporary MADOS job directories
+2025-05-15 18:34:04,735 - INFO - Started MADOS service with PID: 7420
+2025-05-15 18:34:04,735 - WARNING - Too many consecutive failures (3), clearing all temp files
+2025-05-15 18:34:04,735 - INFO - Cleaning up temp directory: C:\Users\alvito\AppData\Local\Temp
+2025-05-15 18:34:04,745 - INFO - Removed 0 temporary MADOS job directories
+2025-05-15 18:34:28,834 - WARNING - MADOS service failed or using too much memory (failure #1)
+2025-05-15 18:34:52,894 - WARNING - MADOS service failed or using too much memory (failure #2)
+2025-05-15 18:35:16,990 - WARNING - MADOS service failed or using too much memory (failure #3)
+2025-05-15 18:35:16,991 - INFO - Restarting MADOS service...
+2025-05-15 18:35:21,656 - INFO - Starting MADOS service...
+2025-05-15 18:35:21,656 - INFO - Cleaning up temp directory: C:\Users\alvito\AppData\Local\Temp
+2025-05-15 18:35:21,662 - INFO - Removed 0 temporary MADOS job directories
+2025-05-15 18:35:21,667 - INFO - Started MADOS service with PID: 14576
+2025-05-15 18:35:21,667 - WARNING - Too many consecutive failures (3), clearing all temp files
+2025-05-15 18:35:21,667 - INFO - Cleaning up temp directory: C:\Users\alvito\AppData\Local\Temp
+2025-05-15 18:35:21,671 - INFO - Removed 0 temporary MADOS job directories
+2025-05-15 20:21:12,905 - INFO - Starting MADOS service monitor
+2025-05-15 20:21:17,609 - INFO - MADOS memory usage: 3.2%
+2025-05-15 20:21:41,042 - INFO - MADOS memory usage: 3.2%
+2025-05-15 20:22:03,637 - INFO - MADOS memory usage: 3.2%
+2025-05-15 20:22:26,198 - INFO - MADOS memory usage: 3.2%
+2025-05-15 20:22:48,777 - INFO - MADOS memory usage: 3.2%
+2025-05-15 20:23:11,343 - INFO - MADOS memory usage: 3.2%
+2025-05-15 20:23:33,943 - INFO - MADOS memory usage: 3.2%
+2025-05-15 20:23:56,554 - INFO - MADOS memory usage: 3.2%
+2025-05-15 20:24:19,154 - INFO - MADOS memory usage: 3.2%
+2025-05-15 20:24:41,745 - INFO - MADOS memory usage: 3.2%
+2025-05-15 20:25:04,376 - INFO - MADOS memory usage: 3.2%
+2025-05-15 20:25:26,973 - INFO - MADOS memory usage: 3.2%
+2025-05-15 20:25:49,552 - INFO - MADOS memory usage: 3.2%
+2025-05-15 20:26:12,104 - INFO - MADOS memory usage: 3.2%
+2025-05-15 20:26:34,736 - INFO - MADOS memory usage: 3.2%
+2025-05-15 20:26:57,390 - INFO - MADOS memory usage: 3.2%
+2025-05-15 20:27:19,984 - INFO - MADOS memory usage: 3.2%
+2025-05-15 20:27:42,590 - INFO - MADOS memory usage: 3.2%
+2025-05-15 20:28:05,185 - INFO - MADOS memory usage: 3.2%
+2025-05-15 20:28:27,777 - INFO - MADOS memory usage: 3.2%
+2025-05-15 20:28:50,374 - INFO - MADOS memory usage: 3.2%
+2025-05-15 20:29:12,983 - INFO - MADOS memory usage: 3.2%
+2025-05-15 20:29:35,602 - INFO - MADOS memory usage: 3.2%
+2025-05-15 20:29:58,240 - INFO - MADOS memory usage: 3.2%
+2025-05-15 20:30:20,898 - INFO - MADOS memory usage: 3.2%
+2025-05-15 20:30:43,542 - INFO - MADOS memory usage: 3.2%
+2025-05-15 20:31:06,166 - INFO - MADOS memory usage: 3.2%
+2025-05-15 20:31:28,798 - INFO - MADOS memory usage: 3.2%
+2025-05-15 20:31:51,413 - INFO - MADOS memory usage: 3.2%
+2025-05-15 20:32:13,974 - INFO - MADOS memory usage: 3.2%
+2025-05-15 20:32:36,557 - INFO - MADOS memory usage: 3.2%
+2025-05-15 20:32:59,145 - INFO - MADOS memory usage: 3.2%
+2025-05-15 20:33:21,746 - INFO - MADOS memory usage: 3.2%
+2025-05-15 20:33:44,355 - INFO - MADOS memory usage: 3.2%
+2025-05-15 20:34:06,963 - INFO - MADOS memory usage: 3.2%
+2025-05-15 20:34:29,548 - INFO - MADOS memory usage: 3.2%
+2025-05-15 20:34:52,111 - INFO - MADOS memory usage: 3.2%
+2025-05-15 20:35:14,679 - INFO - MADOS memory usage: 3.2%
+2025-05-15 20:35:37,278 - INFO - MADOS memory usage: 3.2%
+2025-05-15 20:35:59,882 - INFO - MADOS memory usage: 3.2%
+2025-05-15 20:36:22,507 - INFO - MADOS memory usage: 3.2%
+2025-05-15 20:36:45,220 - INFO - MADOS memory usage: 3.2%
+2025-05-15 20:37:08,017 - INFO - MADOS memory usage: 3.2%
+2025-05-15 20:37:30,805 - INFO - MADOS memory usage: 3.2%
+2025-05-15 20:37:53,570 - INFO - MADOS memory usage: 1.1%
+2025-05-15 20:38:25,924 - INFO - MADOS memory usage: 0.2%
+2025-05-15 20:38:54,598 - INFO - MADOS memory usage: 0.2%
+2025-05-15 20:39:26,071 - WARNING - MADOS service failed or using too much memory (failure #1)
+2025-05-15 20:39:26,600 - INFO - Restarting MADOS service...
+2025-05-15 20:39:29,091 - INFO - Terminating existing MADOS process (PID: 15728)
+2025-05-15 20:39:36,225 - INFO - Starting MADOS service...
+2025-05-15 20:39:36,956 - INFO - Cleaning up temp directory: C:\Users\alvito\AppData\Local\Temp
+2025-05-15 20:39:59,668 - INFO - Removed 0 temporary MADOS job directories
+2025-05-15 20:39:59,834 - INFO - Started MADOS service with PID: 10488
+2025-05-15 20:40:24,372 - WARNING - MADOS service failed or using too much memory (failure #2)
+2025-05-15 20:40:47,018 - INFO - MADOS memory usage: 3.2%
+2025-05-15 20:41:09,367 - INFO - MADOS memory usage: 0.2%
+2025-05-15 20:41:31,585 - INFO - MADOS memory usage: 0.2%
+2025-05-15 20:41:53,755 - INFO - MADOS memory usage: 0.2%
+2025-05-15 20:42:15,956 - INFO - MADOS memory usage: 0.2%
+2025-05-15 20:42:38,157 - INFO - MADOS memory usage: 0.2%
+2025-05-15 20:48:04,816 - INFO - Starting MADOS service monitor
+2025-05-15 20:48:09,418 - INFO - MADOS memory usage: 3.2%
+2025-05-16 20:38:53,390 - INFO - Starting MADOS service monitor
+2025-05-16 20:38:57,503 - INFO - Restarting MADOS service...
+2025-05-16 20:39:02,152 - INFO - Starting MADOS service...
+2025-05-16 20:39:02,153 - INFO - Cleaning up temp directory: C:\Users\alvito\AppData\Local\Temp
+2025-05-16 20:39:02,165 - INFO - Removed 0 temporary MADOS job directories
+2025-05-16 20:39:02,999 - INFO - Started MADOS service with PID: 17356
+2025-05-16 20:39:07,082 - WARNING - MADOS service failed or using too much memory (failure #1)
+2025-05-16 20:39:31,184 - WARNING - MADOS service failed or using too much memory (failure #2)
+2025-05-16 20:39:55,271 - WARNING - MADOS service failed or using too much memory (failure #3)
+2025-05-16 20:40:19,372 - WARNING - MADOS service failed or using too much memory (failure #4)
+2025-05-16 20:40:19,372 - INFO - Restarting MADOS service...
+2025-05-16 20:40:24,014 - INFO - Starting MADOS service...
+2025-05-16 20:40:24,014 - INFO - Cleaning up temp directory: C:\Users\alvito\AppData\Local\Temp
+2025-05-16 20:40:24,018 - INFO - Removed 0 temporary MADOS job directories
+2025-05-16 20:40:24,022 - INFO - Started MADOS service with PID: 9412
+2025-05-16 20:40:24,023 - WARNING - Too many consecutive failures (4), clearing all temp files
+2025-05-16 20:40:24,023 - INFO - Cleaning up temp directory: C:\Users\alvito\AppData\Local\Temp
+2025-05-16 20:40:24,028 - INFO - Removed 0 temporary MADOS job directories
+2025-05-16 20:40:48,150 - WARNING - MADOS service failed or using too much memory (failure #1)
+2025-05-16 20:41:12,281 - WARNING - MADOS service failed or using too much memory (failure #2)
+2025-05-16 20:41:36,375 - WARNING - MADOS service failed or using too much memory (failure #3)
+2025-05-16 20:41:36,376 - INFO - Restarting MADOS service...
+2025-05-16 20:41:41,030 - INFO - Starting MADOS service...
+2025-05-16 20:41:41,030 - INFO - Cleaning up temp directory: C:\Users\alvito\AppData\Local\Temp
+2025-05-16 20:41:41,034 - INFO - Removed 0 temporary MADOS job directories
+2025-05-16 20:41:41,037 - INFO - Started MADOS service with PID: 17608
+2025-05-16 20:41:41,038 - WARNING - Too many consecutive failures (3), clearing all temp files
+2025-05-16 20:41:41,038 - INFO - Cleaning up temp directory: C:\Users\alvito\AppData\Local\Temp
+2025-05-16 20:41:41,042 - INFO - Removed 0 temporary MADOS job directories
+2025-05-16 20:42:05,163 - WARNING - MADOS service failed or using too much memory (failure #1)
+2025-05-16 20:42:29,259 - WARNING - MADOS service failed or using too much memory (failure #2)
+2025-05-16 20:42:53,346 - WARNING - MADOS service failed or using too much memory (failure #3)
+2025-05-16 20:42:53,347 - INFO - Restarting MADOS service...
+2025-05-16 20:42:57,984 - INFO - Starting MADOS service...
+2025-05-16 20:42:57,985 - INFO - Cleaning up temp directory: C:\Users\alvito\AppData\Local\Temp
+2025-05-16 20:42:57,988 - INFO - Removed 0 temporary MADOS job directories
+2025-05-16 20:42:57,991 - INFO - Started MADOS service with PID: 8956
+2025-05-16 20:42:57,991 - WARNING - Too many consecutive failures (3), clearing all temp files
+2025-05-16 20:42:57,993 - INFO - Cleaning up temp directory: C:\Users\alvito\AppData\Local\Temp
+2025-05-16 20:42:57,999 - INFO - Removed 0 temporary MADOS job directories
+2025-05-16 20:43:22,126 - WARNING - MADOS service failed or using too much memory (failure #1)
+2025-05-16 20:43:46,215 - WARNING - MADOS service failed or using too much memory (failure #2)
+2025-05-16 20:44:10,321 - WARNING - MADOS service failed or using too much memory (failure #3)
+2025-05-16 20:44:10,321 - INFO - Restarting MADOS service...
+2025-05-16 20:44:14,979 - INFO - Starting MADOS service...
+2025-05-16 20:44:14,979 - INFO - Cleaning up temp directory: C:\Users\alvito\AppData\Local\Temp
+2025-05-16 20:44:14,983 - INFO - Removed 0 temporary MADOS job directories
+2025-05-16 20:44:14,986 - INFO - Started MADOS service with PID: 15296
+2025-05-16 20:44:14,987 - WARNING - Too many consecutive failures (3), clearing all temp files
+2025-05-16 20:44:14,987 - INFO - Cleaning up temp directory: C:\Users\alvito\AppData\Local\Temp
+2025-05-16 20:44:14,992 - INFO - Removed 0 temporary MADOS job directories
+2025-05-16 20:44:39,124 - WARNING - MADOS service failed or using too much memory (failure #1)
+2025-05-16 20:45:03,215 - WARNING - MADOS service failed or using too much memory (failure #2)
+2025-05-16 20:45:27,325 - WARNING - MADOS service failed or using too much memory (failure #3)
+2025-05-16 20:45:27,325 - INFO - Restarting MADOS service...
+2025-05-16 20:45:31,991 - INFO - Starting MADOS service...
+2025-05-16 20:45:31,992 - INFO - Cleaning up temp directory: C:\Users\alvito\AppData\Local\Temp
+2025-05-16 20:45:31,996 - INFO - Removed 0 temporary MADOS job directories
+2025-05-16 20:45:31,999 - INFO - Started MADOS service with PID: 17160
+2025-05-16 20:45:32,000 - WARNING - Too many consecutive failures (3), clearing all temp files
+2025-05-16 20:45:32,000 - INFO - Cleaning up temp directory: C:\Users\alvito\AppData\Local\Temp
+2025-05-16 20:45:32,004 - INFO - Removed 0 temporary MADOS job directories
+2025-05-16 20:45:56,123 - WARNING - MADOS service failed or using too much memory (failure #1)
+2025-05-16 20:46:20,241 - WARNING - MADOS service failed or using too much memory (failure #2)
+2025-05-16 20:46:44,357 - WARNING - MADOS service failed or using too much memory (failure #3)
+2025-05-16 20:46:44,358 - INFO - Restarting MADOS service...
+2025-05-16 20:46:48,986 - INFO - Starting MADOS service...
+2025-05-16 20:46:48,987 - INFO - Cleaning up temp directory: C:\Users\alvito\AppData\Local\Temp
+2025-05-16 20:46:48,991 - INFO - Removed 0 temporary MADOS job directories
+2025-05-16 20:46:48,994 - INFO - Started MADOS service with PID: 17668
+2025-05-16 20:46:48,994 - WARNING - Too many consecutive failures (3), clearing all temp files
+2025-05-16 20:46:48,994 - INFO - Cleaning up temp directory: C:\Users\alvito\AppData\Local\Temp
+2025-05-16 20:46:48,998 - INFO - Removed 0 temporary MADOS job directories
+2025-05-16 20:47:13,108 - WARNING - MADOS service failed or using too much memory (failure #1)
+2025-05-16 20:47:37,201 - WARNING - MADOS service failed or using too much memory (failure #2)
+2025-05-16 20:48:01,329 - WARNING - MADOS service failed or using too much memory (failure #3)
+2025-05-16 20:48:01,330 - INFO - Restarting MADOS service...
+2025-05-16 20:48:05,974 - INFO - Starting MADOS service...
+2025-05-16 20:48:05,974 - INFO - Cleaning up temp directory: C:\Users\alvito\AppData\Local\Temp
+2025-05-16 20:48:05,978 - INFO - Removed 0 temporary MADOS job directories
+2025-05-16 20:48:05,982 - INFO - Started MADOS service with PID: 9580
+2025-05-16 20:48:05,983 - WARNING - Too many consecutive failures (3), clearing all temp files
+2025-05-16 20:48:05,983 - INFO - Cleaning up temp directory: C:\Users\alvito\AppData\Local\Temp
+2025-05-16 20:48:05,987 - INFO - Removed 0 temporary MADOS job directories
+2025-05-16 20:48:15,383 - INFO - Monitor stopped by user
